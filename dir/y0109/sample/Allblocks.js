@@ -8,7 +8,7 @@ import Reflux from 'reflux'
 import Block from './Block'
 import Countpage from './Countpage'                     // кількість блоків на сторінці
 import Pagereferences from './Pagereferences'           // переходи по сторінках
-import Store from './setPageStore'
+import setPageStore from './setPageStore'
 
 
 var Table = RB.Table;
@@ -16,7 +16,7 @@ var Button = RB.Button;
 
 
 export default React.createClass({
-    mixins:[Reflux.connect(Store)],
+    mixins:[Reflux.connect(setPageStore)],    //тут є this.state.pagevalue
     getInitialState(){
         return{
             size: 10
@@ -26,7 +26,6 @@ export default React.createClass({
         this.setState({
             size:value
         });
-
     },
     render(){
         var result = [];

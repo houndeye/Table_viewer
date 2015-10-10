@@ -2,12 +2,15 @@
  * Created by hound on 17.09.2015.
  */
 import Reflux from 'reflux'
-import Action from './SetPageAction'
+import SetPageAction from './SetPageAction'
 
-let pagevalue = {pagevalue:1}
+
+let pagevalue = {
+    pagevalue: 1
+};
 export default Reflux.createStore({
-    listenables:Action,
-    getInitialState(){
+    listenables:SetPageAction,
+    getInitialState(){   // це передається в олблок
         return(pagevalue)
     },
     onSetPage(value){

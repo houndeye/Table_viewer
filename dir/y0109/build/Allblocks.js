@@ -22,7 +22,7 @@ define(['exports', 'module', 'react', 'react_bootstrap', 'reflux', './Block', '.
 
     // �������� �� ���������
 
-    var _Store = _interopRequireDefault(_setPageStore);
+    var _setPageStore2 = _interopRequireDefault(_setPageStore);
 
     var Table = _RB['default'].Table;
     var Button = _RB['default'].Button;
@@ -30,7 +30,7 @@ define(['exports', 'module', 'react', 'react_bootstrap', 'reflux', './Block', '.
     module.exports = _React['default'].createClass({
         displayName: 'Allblocks',
 
-        mixins: [_Reflux['default'].connect(_Store['default'])],
+        mixins: [_Reflux['default'].connect(_setPageStore2['default'])], //��� � this.state.pagevalue
         getInitialState: function getInitialState() {
             return {
                 size: 10

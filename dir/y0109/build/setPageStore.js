@@ -8,12 +8,15 @@ define(['exports', 'module', 'reflux', './SetPageAction'], function (exports, mo
 
     var _Reflux = _interopRequireDefault(_reflux);
 
-    var _Action = _interopRequireDefault(_SetPageAction);
+    var _SetPageAction2 = _interopRequireDefault(_SetPageAction);
 
-    var pagevalue = { pagevalue: 1 };
+    var pagevalue = {
+        pagevalue: 1
+    };
     module.exports = _Reflux['default'].createStore({
-        listenables: _Action['default'],
+        listenables: _SetPageAction2['default'],
         getInitialState: function getInitialState() {
+            // �� ����������� � ������
             return pagevalue;
         },
         onSetPage: function onSetPage(value) {

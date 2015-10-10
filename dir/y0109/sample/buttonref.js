@@ -3,18 +3,27 @@
  */
 
 import React from 'react'
-import Action from './SetPageAction'
+import RB from 'react_bootstrap'
+
+import SetPageAction from './SetPageAction'
+import SetReferenceAction from './SetReferenceAction'
+
+var Button = RB.Button
 
 export default React.createClass({
+    componentWillMount(){
+
+    },
     onClick(){
-        Action.setPage(this.props.pagevalue)
+        SetPageAction.setPage(this.props.pagevalue);
+        SetReferenceAction.currentPage(this.props.pagevalue);
     },
     render(){
         return (
-            <button style={{width:25,height:25,marginLeft:4}}
+            <Button style={{width:34,height:34,marginLeft:4}}
                     onClick={this.onClick}
                 >{this.props.pagevalue}
-            </button>
+            </Button>
         )
     }
 })
